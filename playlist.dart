@@ -21,6 +21,7 @@ class PlaylistApp extends StatefulWidget {
 }
 
 class _PlaylistAppState extends State<PlaylistApp> {
+  double _currentSliderValue = 20;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,13 +81,22 @@ class _PlaylistAppState extends State<PlaylistApp> {
     ),
 
 
-    /*  Slider(
-           value: currentPositiontodouble(),
-           min:0,0,
-           max: duration.toDouble(),
-           onChanged:(double value){
-             audioPlayer.seek(Duration(seconds: newPosition.clamp()));
-           }*/
+    Slider(
+       value: _currentSliderValue,
+       min: 0.0,
+       max: 100,
+       divisions: 10,
+       label:_currentSliderValue.round().toString(),
+       onChanged: (double value) {
+         setState(() {
+           _currentSliderValue = value;
+         });
+       },
+     ),
+       Text(
+         'Selected value: ${_currentSliderValue.round()}',
+       ),
+
 
 
        Padding(
