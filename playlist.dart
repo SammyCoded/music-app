@@ -93,9 +93,18 @@ class _PlaylistAppState extends State<PlaylistApp> {
          });
        },
      ),
-       Text(
-         'Selected value: ${_currentSliderValue.round()}',
-       ),
+       Padding(
+       padding: const EdgeInsets.fromLTRB(22,0,20,0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children:[
+          Text('0.0'),
+          Text('100'),
+        ],
+
+
+      ),
+     ),
 
 
 
